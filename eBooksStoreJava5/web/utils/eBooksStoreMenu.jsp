@@ -21,7 +21,8 @@
                             <c:when test="${actualUserRole == 'admin'}">
                                 <li><a href="./eBooksStoreAdminUsersPage.jsp">Users</a></li>
                                 <li><a href="./eBooksStoreAdminUserRolesPage.jsp">User roles</a></li>
-                                <li><a href="./eBooksStoreAdminEBooks.jsp">eBooks</a></li>
+                                <li><a href="./eBooksStoreAdminEBooksPage.jsp">eBooks</a></li>
+                                <li><a href="./eBooksStoreAdminBookTypesPage.jsp">Book Types</a></li>
                             </c:when>
                         </c:choose>                              
                     </ul>

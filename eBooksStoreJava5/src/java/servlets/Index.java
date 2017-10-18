@@ -50,9 +50,9 @@ public class Index extends HttpServlet {
         ResultSet resultSet = null;
         Statement statement = null;
         Connection connection = null;
-        String user = "test";
-        String password = "test";
-        String url = "jdbc:derby://localhost:1527/ebooksstore;create=true";
+        String user = "ebooks";
+        String password = "ebooks";
+        String url = "jdbc:derby://localhost:1527/EbookStore5;create=true";
         String driver = "org.apache.derby.jdbc.ClientDriver";
         try
         {

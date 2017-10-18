@@ -39,9 +39,9 @@ public class eBooksStoreAdminUsersServlet extends HttpServlet {
             throws ServletException, IOException {
             response.setContentType("text/html;charset=UTF-8");
             // declare specific DB info
-            String user = "test" ;
-            String password = "test";
-            String url = "jdbc:derby://localhost:1527/ebooksstore;create=true;";
+            String user = "ebooks" ;
+            String password = "ebooks";
+            String url = "jdbc:derby://localhost:1527/EbookStore5;create=true;";
             String driver = "org.apache.derby.jdbc.ClientDriver";  
             // check push on Insert button
             if (request.getParameter("admin_users_insert") != null) { // insert values from fields
@@ -51,7 +51,7 @@ public class eBooksStoreAdminUsersServlet extends HttpServlet {
                 String username = request.getParameter("admin_users_username");
                 String user_password = request.getParameter("admin_users_password");
                 String role = request.getParameter("admin_user_role");
-                String customer = request.getParameter("admin_user_customer");
+                
                 // declare specific DBMS operationsvariables
                 ResultSet resultSet = null;
                 Statement statement = null;

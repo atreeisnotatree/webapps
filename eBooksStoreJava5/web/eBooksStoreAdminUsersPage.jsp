@@ -25,10 +25,10 @@
                         <form action="${pageContext.request.contextPath}/eBooksStoreAdminUsersServlet" method="POST">
                         <sql:setDataSource 
                         var="snapshot" 
-                        driver="org.apache.derby.jdbc.ClientDriver40"
-                        url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
-                        user="test"  
-                        password="test"/>
+                        driver="org.apache.derby.jdbc.ClientDriver"
+                        url="jdbc:derby://localhost:1527/EbookStore5;create=true;"
+                        user="ebooks"  
+                        password="ebooks"/>
                         <sql:query dataSource="${snapshot}" var="result">
                             SELECT EBOOKS.USERS.SSN, EBOOKS.USERS."NAME", EBOOKS.USERS.PASSWORD, EBOOKS.USERS."ROLE" FROM EBOOKS.USERS, EBOOKS.ROLES WHERE EBOOKS.USERS."ROLE" = EBOOKS.ROLES."ROLE" ORDER BY NAME, ROLE ASC 
                         </sql:query>
@@ -55,10 +55,10 @@
                         <%-- Details --%>
                         <sql:setDataSource 
                         var="snapshotroles" 
-                        driver="org.apache.derby.jdbc.ClientDriver40"
-                        url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
-                        user="test"  
-                        password="test"/>
+                        driver="org.apache.derby.jdbc.ClientDriver"
+                        url="jdbc:derby://localhost:1527/EbookStore5;create=true;"
+                        user="ebooks"  
+                        password="ebooks"/>
                         <sql:query dataSource="${snapshotroles}" var="resultroles">
                             SELECT ROLE from EBOOKS.ROLES ORDER BY ROLE ASC 
                         </sql:query>

@@ -7,6 +7,7 @@ drop table EBOOKS.BOOK_PAPER_QUALITIES;
 drop table EBOOKS.RATINGS;
 drop table EBOOKS.BOOK_GENRES;
 drop table EBOOKS.BOOK_AUTHOR;
+drop table EBOOKS.ROLES;
 
 create table EBOOKS.BOOK_TYPES(
 id  integer primary key,
@@ -104,14 +105,17 @@ values (4, 'Gastronomie');
 insert into EBOOKS.BOOK_GENRES(id, genre)
 values (5, 'Stiinte');
 ------------------------
-insert into EBOOKS.USERS(SSN, NAME, PASSWORD)
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('2801010121111', 'Pop Ana', 'iniana123','user');
 
-insert into EBOOKS.USERS(SSN, NAME, PASSWORD)
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('1801010121122', 'Popa Andrei', 'iniandrei123','user');
 
-insert into EBOOKS.USERS(SSN, NAME, PASSWORD)
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
 values('2800910121133', 'Popa Andra', 'iniandra123','user');
+
+insert into EBOOKS.USERS(SSN, NAME, PASSWORD, ROLE)
+values('0000000000001', 'admin', 'admin','admin');
 ------------------------
 insert into EBOOKS.ROLES(ROLE)
 values('admin');

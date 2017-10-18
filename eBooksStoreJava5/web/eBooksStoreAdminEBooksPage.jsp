@@ -22,13 +22,13 @@
                     <!-- include menu -->
                     <%@ include file="./utils/eBooksStoreMenu.jsp" %>
                     <%-- Master view --%>
-                        <form action="${pageContext.request.contextPath}/eBooksStoreAdminUsersServlet" method="POST">                       
+                        <form action="${pageContext.request.contextPath}/eBooksStoreAdminEbooksServlet" method="POST">                       
                         <sql:setDataSource 
                         var="snapshot" 
-                        driver="org.apache.derby.jdbc.ClientDriver40"
-                        url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
-                        user="test"  
-                        password="test"/>
+                        driver="org.apache.derby.jdbc.ClientDriver"
+                        url="jdbc:derby://localhost:1527/EbookStore5;create=true;"
+                        user="ebooks"  
+                        password="ebooks"/>
                         <sql:query dataSource="${snapshot}" var="result">
                             SELECT ISBN, DENUMIRE, ID_TYPE, ID_QUALITY, PAGES, ID_GENRE, PRET FROM EBOOKS.EBOOKS
                         </sql:query>
@@ -47,7 +47,7 @@
                             </tr>
                             <c:forEach var="row" varStatus="loop" items="${result.rows}">
                             <tr>
-                                <td width="4%" class="tdc"><input type="checkbox" name="admin_users_checkbox" value="${row.isbn}"></td>
+                                <td width="4%" class="tdc"><input type="checkbox" name="admin_ebooks_checkbox" value="${row.isbn}"></td>
                                 <td width="12%" class="tdc"><c:out value="${row.isbn}"/></td>
                                 <td width="12%" class="tdc"><c:out value="${row.denumire}"/></td>
                                 <td width="12%" class="tdc"><c:out value="${row.id_type}"/></td>
@@ -61,28 +61,28 @@
                         <%-- Details --%>
                         <sql:setDataSource 
                         var="snapshotgenres" 
-                        driver="org.apache.derby.jdbc.ClientDriver40"
-                        url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
-                        user="test"  
-                        password="test"/>
+                        driver="org.apache.derby.jdbc.ClientDriver"
+                        url="jdbc:derby://localhost:1527/EbookStore5;create=true;"
+                        user="ebooks"  
+                        password="ebooks"/>
                         <sql:query dataSource="${snapshotgenres}" var="resultgenres">
                             SELECT ID, GENRE FROM EBOOKS.BOOK_GENRES 
                         </sql:query>
                         <sql:setDataSource 
                         var="snapshotpaperqualities" 
-                        driver="org.apache.derby.jdbc.ClientDriver40"
-                        url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
-                        user="test"  
-                        password="test"/>
+                        driver="org.apache.derby.jdbc.ClientDriver"
+                        url="jdbc:derby://localhost:1527/EbookStore5;create=true;"
+                        user="ebooks"  
+                        password="ebooks"/>
                         <sql:query dataSource="${snapshotpaperqualities}" var="resultpaperqualities">
                             SELECT ID, QUALITY FROM EBOOKS.BOOK_PAPER_QUALITIES 
                         </sql:query>    
                         <sql:setDataSource 
                         var="snapshottypes" 
-                        driver="org.apache.derby.jdbc.ClientDriver40"
-                        url="jdbc:derby://localhost:1527/ebooksstore;create=true;"
-                        user="test"  
-                        password="test"/>
+                        driver="org.apache.derby.jdbc.ClientDriver"
+                        url="jdbc:derby://localhost:1527/EbookStore5;create=true;"
+                        user="ebooks"  
+                        password="ebooks"/>
                         <sql:query dataSource="${snapshottypes}" var="resulttypes">
                             SELECT ID, TYPE FROM EBOOKS.BOOK_TYPES 
                         </sql:query>    

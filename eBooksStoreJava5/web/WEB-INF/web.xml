@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>eBooksStoreAdminEBooks</servlet-name>
-        <servlet-class>servlets.eBooksStoreAdminEBooks</servlet-class>
+        <servlet-class>servlets.eBooksStoreAdminEBooksServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>eBooksStoreAdminUserRolesServlet</servlet-name>
@@ -19,6 +19,10 @@
     <servlet>
         <servlet-name>eBooksStoreMainServlet</servlet-name>
         <servlet-class>servlets.eBooksStoreMainServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eBooksStoreAdminBookTypesServlet</servlet-name>
+        <servlet-class>servlets.eBooksStoreAdminBookTypesServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>eBooksStoreMainServlet</servlet-name>
         <url-pattern>/eBooksStoreMainServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eBooksStoreAdminBookTypesServlet</servlet-name>
+        <url-pattern>/eBooksStoreAdminBookTypesServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
